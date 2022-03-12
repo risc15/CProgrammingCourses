@@ -1,0 +1,52 @@
+Relationship Between Arrays and Pointers
+========================================
+
+An array is a block of sequential data.
+
+Here is a program to print addresses of array elements:
+
+int x[4];
+
+for (int i = 0; i < 4; i++) {
+    printf("&x[%d] = %p\n", i, &x[i]);
+}
+
+printf("Address of array x: %p\n", x);
+
+return 0;
+
+This will output something like:
+
+&x[0] = 0x7fffffffe830
+&x[1] = 0x7fffffffe834
+&x[2] = 0x7fffffffe838
+&x[3] = 0x7fffffffe83c
+Address of array x: 0x7fffffffe830
+
+There is a difference of four bytes betwwn two consecutive elements of array x.
+It is because the size of int is 4 bytes (on our compiler).
+
+Notice that the address of x[0] and x is the same. It's because the variable
+name x points to the first element of the array.
+
+From the example above, it is clear that:
+    * &x[0] is equivalent to x
+    * x[0] is equivalent to *x
+    * &x[1] is equivalent to x+1
+    * x[1] is equivalent to *(x+1)
+    * x{2} is equivalent to *(x+2)
+    * and so on...
+
+
+
+
+
+
+
+
+
+
+
+
+
+

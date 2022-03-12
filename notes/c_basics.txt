@@ -1,0 +1,183 @@
+C Syntax
+========
+
+This file covers the basic syntax of the C programming language.
+
+Tokens
+======
+
+Tokens are the smallest element of a program that is meaningful to the
+compiler.
+
+A C statement is made up of various tokens. For example:
+
+printf("Hello, World! \n"); /* This is a comment */
+
+This statement contains these tokens:
+    * printf
+    * (
+    * "Hello, World! \n"
+    * )
+    * ;
+    * /* This is a comment */
+
+The semicolon denotes the end of a logical entity (statement).
+
+Comments are ignored by the compiler.
+
+Tokens can be classified as follows:
+
+* Keywords
+* Identifiers
+* Constants
+* Strings
+* Special Symbols
+* Operators
+
+Keywords
+========
+
+Keywords are predefines, reserved words used in programming that have
+special meaning to the compiler. They are part of the syntax and they
+cannot be used as an identifier.
+
+int money;
+
+Here, int is a keyword that indiates money is a varialbe of type int. As
+C is a case sensitive language, all keywords must be written in lower 
+case.
+
+List of Keywords:
+
+    auto
+    break
+    case
+    char
+    continue
+    do
+    default
+    const
+    double
+    else
+    enum
+    extern
+    for
+    if
+    goto
+    float
+    int
+    long
+    register
+    return
+    signed
+    static
+    sizeof
+    short
+    struct
+    switch
+    typedef
+    union
+    void
+    while
+    volatile
+    unsigned
+
+Identifiers
+===========
+
+Identifier refers to a name given to entities such as variables, functions,
+structs, etc.
+
+Identifiers must be unique and must be different from keywords.
+
+int money;
+double accountBalance;
+
+Here, money and accountBalance are identifiers.
+
+Variables
+=========
+
+A variable is a container (storage area) to hold data. To indicate the storage
+area, each variable should be given a unique name (identifier). 
+
+Variable names are just the symbolic representation of a memory location. For
+example:
+
+int playerScore = 95;
+
+playerScore is a variable of int type which is assigned an integer value of 95.
+This value can be changed, hence the name variable.
+
+C is a strongly typed language. This means that the variable type cannot be
+changed once it is declared. For example:
+
+int number = 5;     // integer variable
+number = 5.5;       // error
+double number;      // error
+
+Literals
+========
+
+Literals are data used for representing fixed values. For example: 1, 1.25, 'c'
+are literal representation of numbers or letters.
+
+There are three types of integer literals in C:
+
+    * Decimal
+    * Octal
+    * Hexadecimal
+
+Decimal: 0, -9, 22 etc                  No prefix
+Octal: 021, 077, 033 etc                Prefixed with a 0 (zero)
+Hexadecimal: 0x7f, 0x2a, 0x521 etc      Prefixed with a 0x
+
+A floating-point literal is a numeric literal that has either a fractional form
+or an exponent form. For example:
+
+    * -2.0
+    * 0.00234
+    * -0.22E-5
+
+Note: E-5 = 10^-5
+
+A character literal is created by enclosing a single character inside single
+quotation marks. For example: 'c', '2', 'a', 'p', etc...
+
+Sometimes, it is necessary to use characters that cannot be typed or has
+special meaning in C programming. For example: newline(enter), tab, question
+mark, etc...
+
+In order to use these, escape sequences are used.
+
+    \b      Backspace
+    \f      Form feed
+    \n      Newline
+    \r      Return
+    \t      Horizontal tab
+    \v      Vertical tab
+    \\      Backslash
+    \'      Single quotation mark
+    \"      Double quotation mark
+    \?      Question mark
+    \O      Null character
+
+String literals are sequences of characters enclosed in double-quote marks.
+For example: "Good", "", "     ", "x", "Earth is round\n".
+
+Constants
+=========
+
+If you want to define a variable whose value cannot be changed, you can use the
+const keyword. This will create a constant.
+
+const double PI = 3.14;
+
+Here, PI is a symbolic constant; its value cannot be changed.
+
+const double PI = 3.14;
+PI = 2.9;                   // Error
+
+You can also define a constant using the #define preprocessor directive. We
+will learn more about it later.
+

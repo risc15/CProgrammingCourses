@@ -1,0 +1,93 @@
+C Pointers
+==========
+
+Before we learn about pointers, we need to understand addresses in C.
+
+Address in C
+============
+
+If you have a variable var in your program, &var will give you its address in
+memory.
+
+scanf("%d", &var);
+
+Here, the value entered by the user is stored in the address of var variable.
+
+A working example:
+
+int var = 5;
+printf("var: %d\n", var);
+
+// Notice the use of & before var:
+printf("address of var: %p", &var);
+return 0;
+
+Output:
+
+var: 5
+address of var: 0x7fffffffe86c
+
+C Pointers
+==========
+
+Here is how we declare pointers:
+
+int* p;
+
+Here, we declare a pointer p of type int. You can also declare pointers like
+this:
+
+int *p1;
+int * p2;
+int* p1, p2;
+
+The last one, we declare a pointer p1 and a normal variable p2.
+
+Assigning Addresses to Pointers
+===============================
+
+int* pc, c;
+c = 5;
+pc = &c;
+
+Here, 5 is assigned to the c variable. The address of c is assigned to the pc
+pointer.
+
+Get Value of Something Pointed by Pointers
+==========================================
+
+To get the value of the thing pointed by the pointers, we use the * operator.
+For example:
+
+int* pc, c;
+c = 5;
+pc = &c;
+printf("%d\n", *pc);    // Output is 5
+
+Here, the address of c is assigned to the pc pointer. To get the value stored
+in that address, we used *pc.
+
+Note: In the above example, pc is a pointer, not *pc. You cannot and should not
+do something like *pc = &c;
+
+By the way, * is called the dereference operator (when working with pointers).
+It operates on a pointer and gives the value stored in that pointer.
+
+Changing Value Pointed by Pointers
+==================================
+
+int* pc, c;             // Create pc pointer and c variable.
+int c = 5;              // Set value of c to 5.
+pc = &c;                // Set pointer to address of c.
+c = 1;                  // Change c to equal 1.
+printf("%d", c);        // Output: 1. We print the contents of c.
+printf("%d", *pc);      // Output: 1. We print the contents at pointer.
+
+*pc = 10;
+printf("%d", *pc);      // Output is now 10.
+printf("%d", c);        // Output is also 10.
+
+int d = -15;            // Create new variable.
+printf("%d", *pc);      // Output is still 10;
+pc = &d;                // Change the pointer to the address of d.
+
